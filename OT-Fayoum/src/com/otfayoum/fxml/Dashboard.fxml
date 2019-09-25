@@ -21,7 +21,7 @@
                <children>
                   <Button fx:id="btnName" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="49.0" prefWidth="262.0" styleClass="button1" stylesheets="@../../../css/fullpackstyling.css" text="Ben Affleck" textFill="WHITE">
                      <graphic>
-                        <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="pic" fitHeight="46.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../resources/ben-affleck.png" />
                            </image>

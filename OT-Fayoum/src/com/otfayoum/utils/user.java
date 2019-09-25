@@ -6,23 +6,9 @@ import java.sql.SQLException;
 
 
 public class user {
-    private static String FName;
-
-    private static String Address;
-    private static String Phone_number;
-    private static String Email;
-    private static String Role;
-    private static String user;
-    private static int Id;
-
-    private static String LName;
-    private static String LAddress;
-    private static String LPhone_number;
-    private static String LEmail;
-    private static String LRole;
-    private static String Luser;
-    private static int LId;
-
+    private static String name;
+    private static int res_id;
+    private static String pic;
     Connection connection ;
     PreparedStatement preparedStatement;
     ResultSet resultSet;
@@ -31,7 +17,7 @@ public class user {
     public user(){ connection = ConnectionUI.ConnDB(); }
     //Login Method
     public String login(String username, String password){
-        String sql = "SELECT * FROM users Where email = ? and password = ?";
+        String sql = "SELECT * FROM users Where email = ? and password = ? and user_type='Admin'";
         try {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, username);
@@ -40,9 +26,9 @@ public class user {
             if (!resultSet.next()) {
                 return "Error";
             } else {
-                this.LId = resultSet.getInt("entity_id");
-                getLUser(getLID());
-                this.Luser = username;
+                this.name = resultSet.getString("first_name");
+                this.res_id = resultSet.getInt("res_id");
+                this.pic = resultSet.getString("image");
                 return "Success";
             }
 
@@ -51,123 +37,14 @@ public class user {
             return "Exception";
         }
     }
-
-
-    // update user data
-    public boolean updateData(int id, String name,String Address,String Phone_number,String Role,String Email){
-        String sql = "UPDATE users SET Name= ?, Address= ?, Phone_Number= ?, Role= ?, Email_Address= ? WHERE id = ?";
-        String sql1 = "SELECT * FROM system_users_info WHERE id = ?";
-        try {
-            p = connection.prepareStatement(sql1);
-            p.setInt(1,id);
-            resultSet = p.executeQuery();
-            if(resultSet.next()) {
-                preparedStatement = connection.prepareStatement(sql);
-                preparedStatement.setInt(6, id);
-                preparedStatement.setString(1, name);
-                preparedStatement.setString(2, Address);
-                preparedStatement.setString(3, Phone_number);
-                preparedStatement.setString(4, Role);
-                preparedStatement.setString(5, Email);
-                preparedStatement.executeUpdate();
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
-        catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
+    public static String getName(){
+        return name;
     }
-
-    // Get query user data
-    public void getUser(int Id){
-        String sql_system_sel = "SELECT * FROM users WHERE entity_id = ? ";
-        try{
-            preparedStatement = connection.prepareStatement(sql_system_sel);
-            preparedStatement.setInt(1,Id);
-            resultSet = preparedStatement.executeQuery();
-            if(resultSet.next()){
-                this.Id = Id;
-                this.FName = resultSet.getString("first_name");
-                //this.Address = resultSet.getString("Address");
-                this.Phone_number = resultSet.getString("mobile_number");
-                this.Role = resultSet.getString("user_type");
-                this.Email = resultSet.getString("email");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public static int getRes(){
+        return res_id;
     }
-    public void getUser(String Name){
-        String sql_system_sel = "SELECT * FROM users WHERE first_name = ? ";
-        try{
-            preparedStatement = connection.prepareStatement(sql_system_sel);
-            preparedStatement.setString(1,Name);
-            resultSet = preparedStatement.executeQuery();
-            if(resultSet.next()){
-                this.Id = resultSet.getInt("entity_id");
-                this.FName = resultSet.getString("first_name");
-                this.Address = resultSet.getString("Address");
-                this.Phone_number = resultSet.getString("mobile_number");
-                this.Role = resultSet.getString("user_type");
-                this.Email = resultSet.getString("email");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public static String getImage(){
+        return pic;
     }
-    //private void setID(int id){ this.Id = id; }
-    public int getID(){return Id;}
-    public String getName(){ return FName;}
-    public String getAddress(){return Address;}
-    public String getPhone_number(){return Phone_number;}
-    public String getEmail(){return Email;}
-    public String getRole(){return Role;}
-    public String getUserName(int Id){
-        String sql_system_sel = "SELECT * FROM users WHERE entity_id = ? ";
-        try{
-            preparedStatement = connection.prepareStatement(sql_system_sel);
-            preparedStatement.setInt(1,Id);
-            resultSet = preparedStatement.executeQuery();
-            if(resultSet.next()){
-                user = resultSet.getString("email");
-            }
-            return user;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return "error";
-        }
-    }
-
-    // Get Loged User Data
-    public void getLUser(int Id){
-        String sql_system_sel = "SELECT * FROM users WHERE entity_id = ? ";
-        try{
-            preparedStatement = connection.prepareStatement(sql_system_sel);
-            preparedStatement.setInt(1,Id);
-            resultSet = preparedStatement.executeQuery();
-            if(resultSet.next()){
-                this.LName = resultSet.getString("first_name");
-                this.LAddress = resultSet.getString("Address");
-                this.LPhone_number = resultSet.getString("phone_number");
-                this.LRole = resultSet.getString("user_type");
-                this.LEmail = resultSet.getString("email");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-    // Set Data Static for Loged User
-    public static int getLID(){return LId;}
-    public static String getLName(){ return LName;}
-    public static String getLAddress(){return LAddress;}
-    public static String getLPhone_number(){return LPhone_number;}
-    public static String getLEmail(){return LEmail;}
-    public static String getLRole(){return LRole;}
-    public static String getLUserName(){return Luser;}
-
 }
 

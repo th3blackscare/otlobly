@@ -59,7 +59,7 @@ public class ProfileController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        txtID.setText(String.valueOf(user.getLID()));
+        /*txtID.setText(String.valueOf(user.getLID()));
         txtName.setText(user.getLName());
         txtEmail.setText(user.getLEmail());
         txtPhone.setText(user.getLPhone_number());
@@ -67,14 +67,14 @@ public class ProfileController implements Initializable {
         txtAddress.setText(user.getLAddress());
         txtRole.setText(user.getLRole());
         txtExit.setText("Cancel");
-        txtUpdate.setText("Update");
+        txtUpdate.setText("Update");*/
     }
 
     public void onEnter(ActionEvent event) {
         user u = new user();
         if(event.getSource() == txtQe){
             clear();
-            if(isNumeric(txtQe.getText())){
+            /*if(isNumeric(txtQe.getText())){
                 u.getUser(Integer.valueOf(txtQe.getText()));
                 txtID.setText(String.valueOf(u.getID()));
                 txtName.setText(u.getName());
@@ -92,10 +92,10 @@ public class ProfileController implements Initializable {
                 txtPhone.setText(u.getPhone_number());
                 txtUser.setText(u.getUserName(u.getID()));
                 txtAddress.setText(u.getAddress());
-                txtRole.setText(u.getRole());
+                txtRole.setText(u.getRole());*/
             }
         }
-    }
+
 
     public void handleButtonAction(MouseEvent event) throws IOException {
         if(event.getSource() == btnExit){
@@ -108,17 +108,17 @@ public class ProfileController implements Initializable {
         }
         else if(event.getSource() == btnLogout){
             user u = new user();
-            if((u.updateData((Integer.valueOf(txtID.getText())),txtName.getText(),txtAddress.getText(),txtPhone.getText(),txtRole.getText(),txtEmail.getText()))== true){
+            /*if((u.updateData((Integer.valueOf(txtID.getText())),txtName.getText(),txtAddress.getText(),txtPhone.getText(),txtRole.getText(),txtEmail.getText()))== true){
                 Alert a = new Alert(Alert.AlertType.NONE);
                 a.setAlertType(Alert.AlertType.INFORMATION);
                 a.setContentText("Information Updated Successfully");
             }else{
                 Alert a = new Alert(Alert.AlertType.NONE);
                 a.setAlertType(Alert.AlertType.ERROR);
-                a.setContentText("Error!");
+                a.setContentText("Error!");*/
             }
         }
-    }
+
     public void clear(){
         txtID.clear();
         txtName.clear();

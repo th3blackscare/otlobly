@@ -13,6 +13,8 @@ import java.util.ResourceBundle;
 
 import com.otfayoum.utils.user;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -33,10 +35,14 @@ public class HomeController implements Initializable {
     @FXML
     private Button btnOrders;
 
+    @FXML
+    private ImageView pic;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // TODO
-        btnName.setText(user.getLName());
+        btnName.setText(user.getName());
+        pic.setImage(new Image("https://www.otlobly.me/uploads/"+user.getImage()));
     }
 
     public void handleButtonAction(MouseEvent event) throws IOException {
