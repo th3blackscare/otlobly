@@ -92,8 +92,8 @@ public class user {
             if(resultSet.next()){
                 this.Id = Id;
                 this.FName = resultSet.getString("first_name");
-                this.Address = resultSet.getString("Address");
-                this.Phone_number = resultSet.getString("Phone_Number");
+                //this.Address = resultSet.getString("Address");
+                this.Phone_number = resultSet.getString("mobile_number");
                 this.Role = resultSet.getString("user_type");
                 this.Email = resultSet.getString("email");
             }
@@ -102,18 +102,18 @@ public class user {
         }
     }
     public void getUser(String Name){
-        String sql_system_sel = "SELECT * FROM system_users_info WHERE Name = ? ";
+        String sql_system_sel = "SELECT * FROM users WHERE first_name = ? ";
         try{
             preparedStatement = connection.prepareStatement(sql_system_sel);
             preparedStatement.setString(1,Name);
             resultSet = preparedStatement.executeQuery();
             if(resultSet.next()){
-                this.Id = resultSet.getInt("id");
-                this.FName = resultSet.getString("Name");
+                this.Id = resultSet.getInt("entity_id");
+                this.FName = resultSet.getString("first_name");
                 this.Address = resultSet.getString("Address");
-                this.Phone_number = resultSet.getString("Phone_Number");
-                this.Role = resultSet.getString("Role");
-                this.Email = resultSet.getString("Email_Address");
+                this.Phone_number = resultSet.getString("mobile_number");
+                this.Role = resultSet.getString("user_type");
+                this.Email = resultSet.getString("email");
             }
         } catch (SQLException e) {
             e.printStackTrace();
