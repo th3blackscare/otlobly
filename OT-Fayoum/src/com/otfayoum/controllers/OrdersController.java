@@ -31,7 +31,7 @@ import java.util.regex.Pattern;
 import com.otfayoum.utils.ConnectionUI;
 import com.otfayoum.utils.user;
 import com.otfayoum.utils.tables;
-
+import com.otfayoum.operations.orderdata;
 import javax.swing.*;
 
 public class OrdersController implements Initializable {
@@ -55,8 +55,22 @@ public class OrdersController implements Initializable {
     @FXML
     private TableView<ObservableList> tblItems;
 
+    @FXML
+    private TextField txtName;
+
+    @FXML
+    private TextField txtPhone;
+
+    @FXML
+    private TextField txtAddress;
+
+    @FXML
+    private TextField txtTotal;
+
     PreparedStatement preparedStatement;
     Connection connection;
+
+    orderdata Orderdata = new orderdata();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -71,7 +85,7 @@ public class OrdersController implements Initializable {
 
         ScheduledExecutorService service = Executors
                 .newSingleThreadScheduledExecutor();
-        service.scheduleAtFixedRate(runnable, 0, 20, TimeUnit.SECONDS);
+        service.scheduleAtFixedRate(runnable, 0, 10, TimeUnit.SECONDS);
 
         tblData.setRowFactory( tv -> {
             TableRow<ObservableList> row = new TableRow<>();
@@ -82,6 +96,15 @@ public class OrdersController implements Initializable {
                     String[] parts1 = parts[0].split(Pattern.quote("["));
                     tblItems.getItems().clear();
                     tblItems.setItems(tables.fetRowList(2,parts1[1]));
+                    try {
+                        Orderdata.orderdata(parts1[1]);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                    txtName.setText(Orderdata.getName());
+                    txtAddress.setText(Orderdata.getAddress());
+                    txtPhone.setText(Orderdata.getPhone());
+                    txtTotal.setText(Orderdata.getTotal_rate());
                 }
             });
             return row ;
