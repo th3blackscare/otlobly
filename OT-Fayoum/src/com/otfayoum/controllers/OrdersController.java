@@ -82,7 +82,6 @@ public class OrdersController implements Initializable {
                     String[] parts1 = parts[0].split(Pattern.quote("["));
                     tblItems.getItems().clear();
                     tblItems.setItems(tables.fetRowList(2,parts1[1]));
-                    System.out.println(selectedItem);
                 }
             });
             return row ;
@@ -116,8 +115,6 @@ public class OrdersController implements Initializable {
 
     public void onType(KeyEvent keyEvent) {
         if(keyEvent.getSource() == txtQe) {
-            lstStatus.getItems().clear();
-            lstStatus.getItems().addAll(txtQe.getText());
         }
     }
 }
