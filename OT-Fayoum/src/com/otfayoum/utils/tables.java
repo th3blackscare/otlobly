@@ -13,6 +13,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.util.Callback;
 
+import com.otfayoum.utils.user;
+
 public class tables {
 
 
@@ -27,9 +29,8 @@ public class tables {
 
     public static TableColumn fetColumnList(TableView<ObservableList> tblData, int ig,String str) {
         connection = ConnectionUI.ConnDB();
-        PreparedStatement preparedStatement;
         if(ig == 1){
-            SQL = "SELECT entity_id,order_status,order_date from order_master where restaurant_id="+"\'"+user.getRes()+"\'";
+            SQL = "SELECT entity_id,order_status,order_date from order_master";
         }
         else if(ig == 2){
             SQL = "SELECT item_name,qty_no,rate from order_item";
@@ -61,7 +62,7 @@ public class tables {
     }
     public static ObservableList<ObservableList> fetRowList(int ig, String str) {
         if(ig == 1){
-            SQL = "SELECT entity_id,order_status,order_date from order_master where order_status= 'placed' OR order_status= 'preparing' and restaurant_id="+"\'"+user.getRes()+"\'";
+            SQL = "SELECT entity_id,order_status,order_date from order_master where restaurant_id="+"\'"+user.getRes()+"\'";
         }
         else if(ig == 2){
             SQL = "SELECT item_name,qty_no,rate from order_item where "+"order_id="+"\'"+str+"\'";

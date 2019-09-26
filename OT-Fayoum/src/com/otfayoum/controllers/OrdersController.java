@@ -67,6 +67,9 @@ public class OrdersController implements Initializable {
     @FXML
     private TextField txtTotal;
 
+    @FXML
+    private TextField txtOrder;
+
     PreparedStatement preparedStatement;
     Connection connection;
 
@@ -105,6 +108,7 @@ public class OrdersController implements Initializable {
                     txtAddress.setText(Orderdata.getAddress());
                     txtPhone.setText(Orderdata.getPhone());
                     txtTotal.setText(Orderdata.getTotal_rate());
+                    txtOrder.setText(Orderdata.getOrder_Id());
                 }
             });
             return row ;
