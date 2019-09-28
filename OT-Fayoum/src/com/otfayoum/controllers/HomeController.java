@@ -9,9 +9,14 @@ import javafx.scene.control.Button;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 import com.otfayoum.utils.user;
+import com.otfayoum.operations.counter;
+
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -38,11 +43,21 @@ public class HomeController implements Initializable {
     @FXML
     private ImageView pic;
 
+    @FXML
+    private Label lblT;
+
+    @FXML
+    private Label lblT1;
+
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // TODO
         btnName.setText(user.getName());
         pic.setImage(new Image("https://www.otlobly.me/uploads/"+user.getImage()));
+        lblT.setText("الاجمالي اليوم: "+counter.getTotal());
+        lblT1.setText("الطلبات اليوم: "+counter.getCount());
     }
 
     public void handleButtonAction(MouseEvent event) throws IOException {
@@ -71,7 +86,7 @@ public class HomeController implements Initializable {
             try {
                 Node node = (Node) event.getSource();
                 Stage stage = (Stage) node.getScene().getWindow();
-                stage.close();
+                //stage.close();
                 Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/otfayoum/fxml/Orders.fxml")));
                 stage.setScene(scene);
                 stage.show();

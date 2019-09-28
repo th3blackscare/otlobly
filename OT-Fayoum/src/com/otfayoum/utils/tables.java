@@ -62,7 +62,7 @@ public class tables {
     }
     public static ObservableList<ObservableList> fetRowList(int ig, String str) {
         if(ig == 1){
-            SQL = "SELECT entity_id,order_status,order_date from order_master where restaurant_id="+"\'"+user.getRes()+"\'";
+            SQL = "SELECT entity_id,order_status,order_date from order_master where restaurant_id="+"\'"+user.getRes()+"\'"+" and (order_status='placed' OR order_status='preparing' OR order_status='onGoing')";
         }
         else if(ig == 2){
             SQL = "SELECT item_name,qty_no,rate from order_item where "+"order_id="+"\'"+str+"\'";

@@ -78,6 +78,10 @@ public class orderdata {
         }
     }
 
+    public int getUserId(){
+        return user_id;
+    }
+
     public String getTotal_rate(){
         return total_rate;
     }

@@ -15,11 +15,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1087.0" style="-fx-background-color: #2F2B43;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otfayoum.controllers.HomeController">
    <children>
-      <AnchorPane prefHeight="519.0" prefWidth="262.0" style="-fx-background-color: #393351;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="826.0" prefHeight="519.0" prefWidth="262.0" style="-fx-background-color: #393351;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="826.0" AnchorPane.topAnchor="0.0">
          <children>
             <VBox layoutY="160.0" prefHeight="356.0" prefWidth="262.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="160.0">
                <children>
-                  <Button fx:id="btnName" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="49.0" prefWidth="262.0" styleClass="button1" stylesheets="@../../../css/fullpackstyling.css" text="Ben Affleck" textFill="WHITE">
+                  <Button fx:id="btnName" alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="10.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="49.0" prefWidth="262.0" styleClass="button1" stylesheets="@../../../css/fullpackstyling.css" text="Ben Affleck" textFill="WHITE" translateX="80.0" translateY="1.0">
                      <graphic>
                         <ImageView fx:id="pic" fitHeight="46.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -32,12 +32,15 @@
                      </VBox.margin>
                      <padding>
                         <Insets left="40.0" />
-                     </padding></Button>
+                     </padding>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets></Button>
                </children>
             </VBox>
-            <Pane layoutY="86.0" prefHeight="61.0" prefWidth="262.0" style="-fx-background-color: #FA2C56; -fx-background-radius: 5;">
+            <Pane layoutY="86.0" prefHeight="61.0" prefWidth="262.0" style="-fx-background-color: #00BC61; -fx-background-radius: 5;">
                <children>
-                  <Label layoutX="25.0" layoutY="17.0" text="Dashboard" textFill="WHITE">
+                  <Label layoutX="92.0" layoutY="17.0" text="لوحة المتابعة من اطلبلي" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -45,9 +48,9 @@
                </children>
             </Pane>
          </children></AnchorPane>
-      <Pane layoutX="262.0" prefHeight="649.0" prefWidth="631.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="262.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="0.0">
+      <Pane layoutX="-3.0" prefHeight="649.0" prefWidth="631.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-3.0" AnchorPane.rightAnchor="261.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Pane layoutX="-25.0" layoutY="-178.0" prefHeight="303.0" prefWidth="467.0" rotate="41.6" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" />
+            <Pane layoutX="-25.0" layoutY="-178.0" prefHeight="303.0" prefWidth="467.0" rotate="41.6" style="-fx-background-color: #00BC61; -fx-background-radius: 70;" />
             <Pane layoutX="76.0" layoutY="106.0">
                <children>
                   <Button fx:id="btnDash" mnemonicParsing="false" onMouseClicked="#handleButtonAction" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
@@ -138,7 +141,7 @@
                         <Image url="@../../../resources/icons8_Shopping_Cart_50px_2.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER" layoutX="3.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Orders" textFill="WHITE">
+                  <Label alignment="CENTER" layoutX="3.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="الطلبات" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="13.0" />
                      </font></Label>
@@ -219,18 +222,36 @@
                      </font></Label>
                </children>
             </Pane>
-            <Button fx:id="btnExit" layoutX="704.0" layoutY="574.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" opacity="0.7" prefHeight="61.0" prefWidth="111.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
-            <Label alignment="CENTER" layoutX="701.0" layoutY="596.0" prefHeight="17.0" prefWidth="111.0" text="Exit" textFill="WHITE">
+            <Button fx:id="btnExit" layoutX="14.0" layoutY="574.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" opacity="0.7" prefHeight="61.0" prefWidth="111.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
+            <Label alignment="CENTER" layoutX="11.0" layoutY="596.0" prefHeight="17.0" prefWidth="111.0" text="الخروج" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="13.0" />
                </font>
             </Label>
-            <Button fx:id="btnLogout" layoutX="584.0" layoutY="574.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" opacity="0.7" prefHeight="61.0" prefWidth="111.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
-            <Label alignment="CENTER" layoutX="581.0" layoutY="596.0" prefHeight="17.0" prefWidth="111.0" text="Log Out" textFill="WHITE">
+            <Button fx:id="btnLogout" layoutX="143.0" layoutY="574.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" opacity="0.7" prefHeight="61.0" prefWidth="111.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
+            <Label alignment="CENTER" layoutX="140.0" layoutY="596.0" prefHeight="17.0" prefWidth="111.0" text="تسجيل الخروج" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="13.0" />
                </font>
             </Label>
+            <Pane layoutX="635.0" layoutY="23.0" prefHeight="61.0" prefWidth="161.0" style="-fx-background-color: #00BC61; -fx-background-radius: 5;">
+               <children>
+                  <Label fx:id="lblT" layoutX="8.0" layoutY="19.0" text="Total" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="491.0" layoutY="23.0" prefHeight="61.0" prefWidth="135.0" style="-fx-background-color: #00BC61; -fx-background-radius: 5;">
+               <children>
+                  <Label fx:id="lblT1" layoutX="18.0" layoutY="19.0" text="Total" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
          </children>
       </Pane>
    </children>

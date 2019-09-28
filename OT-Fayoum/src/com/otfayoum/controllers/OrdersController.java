@@ -15,8 +15,10 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import javafx.scene.web.WebView;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -27,6 +29,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
+import java.awt.Desktop;
+import java.net.URI;
 
 import com.otfayoum.utils.ConnectionUI;
 import com.otfayoum.utils.user;
@@ -37,17 +41,12 @@ import javax.swing.*;
 public class OrdersController implements Initializable {
 
 
-    @FXML
-    private ComboBox<String> lstStatus;
-
-    @FXML
-    private ComboBox<?> lstDelivery;
 
     @FXML
     private Button btnExit;
 
     @FXML
-    private TextField txtQe;
+    private Button btnPrint;
 
     @FXML
     private TableView<ObservableList> tblData;
@@ -70,11 +69,14 @@ public class OrdersController implements Initializable {
     @FXML
     private TextField txtOrder;
 
-    PreparedStatement preparedStatement;
-    Connection connection;
+    @FXML
+    private WebView WebView;
+
 
     orderdata Orderdata = new orderdata();
 
+    String[] parts;
+    String[] parts1;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         tables.fetColumnList(tblData,1,"");
@@ -95,8 +97,8 @@ public class OrdersController implements Initializable {
             row.setOnMouseClicked(event -> {
                 if (event.getClickCount() == 2 && (! row.isEmpty()) ) {
                     Object selectedItem = tblData.getSelectionModel().getSelectedItem().toString();
-                    String[] parts= ((String) selectedItem).split(", ");
-                    String[] parts1 = parts[0].split(Pattern.quote("["));
+                    parts= ((String) selectedItem).split(", ");
+                    parts1 = parts[0].split(Pattern.quote("["));
                     tblItems.getItems().clear();
                     tblItems.setItems(tables.fetRowList(2,parts1[1]));
                     try {
@@ -109,6 +111,7 @@ public class OrdersController implements Initializable {
                     txtPhone.setText(Orderdata.getPhone());
                     txtTotal.setText(Orderdata.getTotal_rate());
                     txtOrder.setText(Orderdata.getOrder_Id());
+                    WebView.getEngine().load("https://otlobly.me/backoffice/inv/view?invoice="+parts1[1]+"&user="+Orderdata.getUserId());
                 }
             });
             return row ;
@@ -133,7 +136,6 @@ public class OrdersController implements Initializable {
         }
     }
 
-    public OrdersController(){connection = ConnectionUI.ConnDB();}
 
     private ObservableList<ObservableList> data;
 
@@ -141,7 +143,23 @@ public class OrdersController implements Initializable {
 
 
     public void onType(KeyEvent keyEvent) {
-        if(keyEvent.getSource() == txtQe) {
+
+    }
+
+    public void onClick(MouseEvent event) throws URISyntaxException, IOException {
+        try {
+            if (event.getSource() == btnPrint) {
+                if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
+                    Desktop.getDesktop().browse(new URI("https://otlobly.me/uploads/invoice/" + parts1[1] + ".pdf"));
+                }
+            }
+        } catch (NullPointerException e) {
+            Alert a = new Alert(Alert.AlertType.NONE);
+            a.setAlertType(Alert.AlertType.ERROR);
+            a.setContentText("من فضلك حدد الاوردر");
+            a.show();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
         }
     }
 }

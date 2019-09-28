@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="677.0" style="-fx-background-color: #2F2B43;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otfayoum.controllers.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="677.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otfayoum.controllers.LoginController">
    <children>
       <Pane prefHeight="649.0" prefWidth="768.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Pane layoutX="-105.0" layoutY="-164.0" prefHeight="303.0" prefWidth="467.0" rotate="41.6" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" />
+            <Pane layoutX="-105.0" layoutY="-164.0" prefHeight="303.0" prefWidth="467.0" rotate="41.6" style="-fx-background-color: #00BC61; -fx-background-radius: 70;" />
             <TextField fx:id="txtUsername" layoutX="206.0" layoutY="176.0" prefHeight="34.0" prefWidth="275.0" promptText="username or email" />
             <PasswordField fx:id="txtPassword" layoutX="206.0" layoutY="254.0" prefHeight="34.0" prefWidth="275.0" promptText="password" stylesheets="@/css/fullpackstylings.css" />
             <Button fx:id="btnSignin" layoutX="222.0" layoutY="320.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="34.0" prefWidth="243.0" stylesheets="@/css/fullpackstylings.css" text="Sign in" />

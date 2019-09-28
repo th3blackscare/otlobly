@@ -74,7 +74,7 @@ public class LoginController implements Initializable {
             lblErrors.setTextFill(Color.TOMATO);
             lblErrors.setText("Connection Error: Check Internet Connection or Server ");
         } else {
-            lblErrors.setTextFill(Color.WHITE);
+            lblErrors.setTextFill(Color.DARKGREEN);
             lblErrors.setText("Connection initiated");
         }
     }
