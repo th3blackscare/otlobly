@@ -1,5 +1,6 @@
 package com.otfayoum.controllers;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -49,15 +50,20 @@ public class HomeController implements Initializable {
     @FXML
     private Label lblT1;
 
-
+    counter c = new counter();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // TODO
+        try {
+            c.counter();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         btnName.setText(user.getName());
         pic.setImage(new Image("https://www.otlobly.me/uploads/"+user.getImage()));
-        lblT.setText("الاجمالي اليوم: "+counter.getTotal());
-        lblT1.setText("الطلبات اليوم: "+counter.getCount());
+        lblT.setText("الاجمالي اليوم: "+c.getTotal());
+        lblT1.setText("الطلبات اليوم: "+c.getCount());
     }
 
     public void handleButtonAction(MouseEvent event) throws IOException {
@@ -77,7 +83,7 @@ public class HomeController implements Initializable {
             try{
                 Node node = (Node) event.getSource();
                 Stage stage = (Stage) node.getScene().getWindow();
-                stage.close();
+                btnExit.setOnAction(e -> Platform.exit());
             }catch (Exception e){
                 e.printStackTrace();
             }

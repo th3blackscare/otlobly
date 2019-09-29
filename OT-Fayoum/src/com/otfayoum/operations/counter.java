@@ -17,8 +17,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class counter {
-    private static int count;
-    private static double total;
+    private int count;
+    private double total;
     Connection connection = ConnectionUI.ConnDB(); ;
     PreparedStatement preparedStatement;
     ResultSet resultSet;
@@ -44,19 +44,19 @@ public class counter {
             while (resultSet.next()) {
                 ObservableList row = FXCollections.observableArrayList();
                 total += resultSet.getInt("subtotal");
-
+                count += 1;
             }
             this.total = total;
-            this.count = resultSet.getMetaData().getColumnCount();
+            this.count = count;
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public static int getCount(){
+    public int getCount(){
         return count;
     }
-    public static double getTotal(){
+    public double getTotal(){
         return total;
     }
 }
