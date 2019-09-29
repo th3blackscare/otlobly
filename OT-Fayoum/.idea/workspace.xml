@@ -2,20 +2,35 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Desktop Messenger:jar" />
+      <artifact name="Otlobly:jar" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Otlobly_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Desktop_Messenger_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Desktop Messenger/com/otfayoum/controllers/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Desktop Messenger/com/otfayoum/controllers/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Desktop Messenger/com/otfayoum/fxml/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Desktop Messenger/com/otfayoum/fxml/Dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Desktop Messenger/com/otfayoum/operations/counter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Desktop Messenger/com/otfayoum/operations/counter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Desktop Messenger/com/otfayoum/utils/user.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Desktop Messenger/com/otfayoum/utils/user.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/otfayoum/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/otfayoum/controllers/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/otfayoum/fxml/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/otfayoum/fxml/Dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/otfayoum/operations/counter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/otfayoum/operations/counter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/otfayoum/utils/user.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/otfayoum/utils/user.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Desktop Messenger.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Otlobly.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Desktop_Messenger_jar/Desktop Messenger.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop Messenger/com/otfayoum/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop Messenger/com/otfayoum/controllers/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop Messenger/com/otfayoum/controllers/HomeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop Messenger/com/otfayoum/controllers/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop Messenger/com/otfayoum/controllers/OrdersController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop Messenger/com/otfayoum/controllers/OrdersController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop Messenger/com/otfayoum/controllers/ProfileController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop Messenger/com/otfayoum/operations/counter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop Messenger/com/otfayoum/operations/orderdata.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop Messenger/com/otfayoum/operations/res_data.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop Messenger/com/otfayoum/utils/ConnectionUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop Messenger/com/otfayoum/utils/md5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop Messenger/com/otfayoum/utils/tables$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop Messenger/com/otfayoum/utils/tables.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop Messenger/com/otfayoum/utils/test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop Messenger/com/otfayoum/utils/user.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/otfayoum/utils/ConnectionUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/otfayoum/utils/ConnectionUI.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,8 +85,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -102,14 +117,14 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553693544768" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/SceneBuilder/SceneBuilder.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/lib" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -117,16 +132,16 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\omars\Desktop\javafx-sample-dashboard-master\src\com\otfayoun\fxml" />
-      <recent name="F:\Dev\JavaFX\Projects\Desktop Messenger\src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\repo\otlobly\OT-Fayoum\src\com\otfayoum" />
       <recent name="F:\Dev\JavaFX\Projects\Desktop Messenger\src\resources" />
       <recent name="F:\Dev\JavaFX\Projects\Desktop Messenger\assets" />
       <recent name="F:\Dev\JavaFX\Projects\Desktop Messenger\src\profile_pics" />
       <recent name="F:\Dev\JavaFX\Projects\Desktop Messenger\src\css" />
-      <recent name="F:\Dev\JavaFX\Projects\Desktop Messenger\src\sample" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\omars\Desktop\javafx-sample-dashboard-master\src\com\otfayoun\fxml" />
+      <recent name="F:\Dev\JavaFX\Projects\Desktop Messenger\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -162,7 +177,7 @@
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.otfayoum.Main" />
-      <module name="Desktop Messenger" />
+      <module name="Otlobly" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -255,7 +270,11 @@
       <workItem from="1569688915966" duration="2515000" />
       <workItem from="1569709520999" duration="1281000" />
       <workItem from="1569759463745" duration="222000" />
-      <workItem from="1569755898893" duration="1574000" />
+      <workItem from="1569755898893" duration="2297000" />
+      <workItem from="1569783349218" duration="1899000" />
+      <workItem from="1569785732340" duration="347000" />
+      <workItem from="1569786482933" duration="1202000" />
+      <workItem from="1569793588166" duration="971000" />
     </task>
     <servers />
   </component>

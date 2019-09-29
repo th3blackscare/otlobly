@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Otlobly:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Otlobly_jar</output-path>
+    <root id="archive" name="Otlobly.jar">
+      <element id="module-output" name="Otlobly" />
+      <element id="dir-copy" path="$PROJECT_DIR$/src/com/lib" />
+    </root>
+  </artifact>
+</component>
