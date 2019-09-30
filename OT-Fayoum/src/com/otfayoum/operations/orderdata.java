@@ -8,7 +8,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class orderdata {
-    //Connection connection = ConnectionUI.ConnDB(); ;
     PreparedStatement preparedStatement;
     ResultSet resultSet;
 

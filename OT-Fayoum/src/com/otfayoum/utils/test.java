@@ -6,13 +6,13 @@ public class test {
     public test(){
     }
     public void setName(String name){
-        this.Name=name;
+        Name=name;
     }
     public static String getName(){
         return Name;
     }
     public void setID(int id){
-        this.Id=id;
+        Id=id;
     }
     public static int getId(){
         return Id;

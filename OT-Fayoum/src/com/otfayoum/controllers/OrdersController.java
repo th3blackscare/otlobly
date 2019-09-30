@@ -1,8 +1,5 @@
 package com.otfayoum.controllers;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,19 +7,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.input.InputMethodEvent;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 import javafx.scene.web.WebView;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.concurrent.Executors;
@@ -32,51 +24,40 @@ import java.util.regex.Pattern;
 import java.awt.Desktop;
 import java.net.URI;
 
-import com.otfayoum.utils.ConnectionUI;
-import com.otfayoum.utils.user;
+
 import com.otfayoum.utils.tables;
 import com.otfayoum.operations.orderdata;
-import javax.swing.*;
+
 
 public class OrdersController implements Initializable {
 
 
 
-    @FXML
-    private Button btnExit;
-
-    @FXML
-    private Button btnPrint;
-
-    @FXML
-    private TableView<ObservableList> tblData;
-
-    @FXML
-    private TableView<ObservableList> tblItems;
-
-    @FXML
-    private TextField txtName;
-
-    @FXML
-    private TextField txtPhone;
-
-    @FXML
-    private TextField txtAddress;
-
-    @FXML
-    private TextField txtTotal;
-
-    @FXML
-    private TextField txtOrder;
-
-    @FXML
-    private WebView WebView;
-
-
     orderdata Orderdata = new orderdata();
-
     String[] parts;
     String[] parts1;
+    @FXML
+    private Button btnExit;
+    @FXML
+    private Button btnPrint;
+    @FXML
+    private TableView<ObservableList> tblData;
+    @FXML
+    private TableView<ObservableList> tblItems;
+    @FXML
+    private TextField txtName;
+    @FXML
+    private TextField txtPhone;
+    @FXML
+    private TextField txtAddress;
+    @FXML
+    private TextField txtTotal;
+    @FXML
+    private TextField txtOrder;
+    @FXML
+    private WebView WebView;
+    private ObservableList<ObservableList> data;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         tables.fetColumnList(tblData,1,"");
@@ -118,8 +99,6 @@ public class OrdersController implements Initializable {
         });
     }
 
-
-
     @FXML
     public void handleButtonAction(MouseEvent event) {
         if(event.getSource() == btnExit){
@@ -135,12 +114,6 @@ public class OrdersController implements Initializable {
             }
         }
     }
-
-
-    private ObservableList<ObservableList> data;
-
-
-
 
     public void onType(KeyEvent keyEvent) {
 

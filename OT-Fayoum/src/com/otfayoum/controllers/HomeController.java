@@ -11,8 +11,6 @@ import javafx.scene.control.Button;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 import com.otfayoum.utils.user;
@@ -35,8 +33,6 @@ public class HomeController implements Initializable {
     @FXML
     private Button btnLogout;
 
-    @FXML
-    private Button btnDash;
 
     @FXML
     private Button btnOrders;
@@ -81,8 +77,6 @@ public class HomeController implements Initializable {
         }
         else if(event.getSource() == btnExit){
             try{
-                Node node = (Node) event.getSource();
-                Stage stage = (Stage) node.getScene().getWindow();
                 btnExit.setOnAction(e -> Platform.exit());
             }catch (Exception e){
                 e.printStackTrace();

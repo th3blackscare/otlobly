@@ -1,46 +1,34 @@
 package com.otfayoum.controllers;
 
-import com.otfayoum.utils.ConnectionUI;
+import com.otfayoum.utils.md5;
+import com.otfayoum.utils.user;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.ResourceBundle;
-
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
-
-import com.otfayoum.utils.user;
-import com.otfayoum.utils.md5;
 
 public class LoginController implements Initializable {
 
     @FXML
     public TextField txtUsername;
-
     @FXML
     private PasswordField txtPassword;
-
     @FXML
     private Button btnSignin;
 
-    @FXML
-    private Label lblErrors;
+    public LoginController() {
 
-    Connection con = null;
-    PreparedStatement preparedStatement = null;
-    ResultSet resultSet;
-    String name;
+
+    }
 
     public void handleButtonAction(MouseEvent event) {
         if (event.getSource() == btnSignin) {
@@ -77,10 +65,5 @@ public class LoginController implements Initializable {
             lblErrors.setTextFill(Color.DARKGREEN);
             lblErrors.setText("Connection initiated");
         }*/
-    }
-
-    public LoginController() {
-
-
     }
 }
