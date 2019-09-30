@@ -5,11 +5,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 public class ConnectionUI {
-    Connection conn = null;
-    public static Connection ConnDB(){
+    static Connection con ;
+    public void ConnectionUI() {
+        ConnDB();
+    }
+    private Connection ConnDB(){
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://41.41.94.230/otlobly?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "omar", "Reem*01019965508");
+            this.con= con;
             return con;
         } catch (SQLException | ClassNotFoundException e) {
             Alert a = new Alert(Alert.AlertType.NONE);
@@ -19,5 +23,8 @@ public class ConnectionUI {
             System.err.println("ConnectionUtil : "+e.getMessage());
             return null;
         }
+    }
+    public static Connection getCon(){
+        return con;
     }
 }

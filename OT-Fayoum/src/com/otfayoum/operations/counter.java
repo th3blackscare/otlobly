@@ -19,7 +19,7 @@ import java.time.format.DateTimeFormatter;
 public class counter {
     private int count;
     private double total;
-    Connection connection = ConnectionUI.ConnDB(); ;
+    Connection connection = ConnectionUI.getCon(); ;
     PreparedStatement preparedStatement;
     ResultSet resultSet;
 

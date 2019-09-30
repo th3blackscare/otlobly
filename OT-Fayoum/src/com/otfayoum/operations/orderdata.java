@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class orderdata {
-    Connection connection = ConnectionUI.ConnDB(); ;
+    //Connection connection = ConnectionUI.ConnDB(); ;
     PreparedStatement preparedStatement;
     ResultSet resultSet;
 
@@ -35,7 +35,7 @@ public class orderdata {
     }
     private void order_master() throws SQLException {
         String sql = "SELECT user_id,address_id,total_rate FROM order_master WHERE entity_id= ?";
-        preparedStatement = connection.prepareStatement(sql);
+        preparedStatement = ConnectionUI.getCon().prepareStatement(sql);
         preparedStatement.setString(1, order_id);
         resultSet = preparedStatement.executeQuery();
         try {
@@ -51,7 +51,7 @@ public class orderdata {
 
     private void getUserData() throws SQLException {
         String sql = "SELECT first_name,mobile_number FROM users WHERE entity_id= ?";
-        preparedStatement = connection.prepareStatement(sql);
+        preparedStatement = ConnectionUI.getCon().prepareStatement(sql);
         preparedStatement.setInt(1, user_id);
         resultSet = preparedStatement.executeQuery();
         try {
@@ -66,7 +66,7 @@ public class orderdata {
 
     private void getUserAddress() throws SQLException {
         String sql = "SELECT address FROM user_address WHERE entity_id= ?";
-        preparedStatement = connection.prepareStatement(sql);
+        preparedStatement = ConnectionUI.getCon().prepareStatement(sql);
         preparedStatement.setInt(1, address_id);
         resultSet = preparedStatement.executeQuery();
         try {

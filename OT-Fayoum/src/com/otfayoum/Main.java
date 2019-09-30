@@ -1,5 +1,6 @@
 package com.otfayoum;
 
+import com.otfayoum.utils.ConnectionUI;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,12 +10,16 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.sql.Connection;
+
 public class Main extends Application {
     //define your offsets here
     private double xOffset = 0;
     private double yOffset = 0;
     @Override
     public void start(Stage primaryStage) throws Exception{
+        ConnectionUI c = new ConnectionUI();
+        c.ConnectionUI();
         Parent root = FXMLLoader.load(getClass().getResource("/com/otfayoum/fxml/login.fxml"));
         primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.setTitle("OT Fayoum");

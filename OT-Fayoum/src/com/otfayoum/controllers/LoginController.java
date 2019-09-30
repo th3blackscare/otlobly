@@ -70,17 +70,17 @@ public class LoginController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         // TODO
-        if (con == null) {
+       /* if (con == null) {
             lblErrors.setTextFill(Color.TOMATO);
             lblErrors.setText("Connection Error: Check Internet Connection or Server ");
         } else {
             lblErrors.setTextFill(Color.DARKGREEN);
             lblErrors.setText("Connection initiated");
-        }
+        }*/
     }
 
     public LoginController() {
-        con = ConnectionUI.ConnDB();
+
 
     }
 }

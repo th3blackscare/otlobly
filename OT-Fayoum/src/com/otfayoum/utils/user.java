@@ -11,18 +11,18 @@ public class user {
     private static String name;
     private static int res_id;
     private static String pic;
-    Connection connection ;
+    //Connection connection = ConnectionUI.ConnDB(); ;
     PreparedStatement preparedStatement;
     ResultSet resultSet;
     PreparedStatement p ;
 
-    public user(){ connection = ConnectionUI.ConnDB(); }
+    //public user(){  }
     //Login Method
 
     public String login(String username, String password){
         String sql = "SELECT * FROM users Where email = ? and password = ? AND (user_type='Admin' OR user_type='MasterAdmin')";
         try {
-            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement = ConnectionUI.getCon().prepareStatement(sql);
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
             resultSet = preparedStatement.executeQuery();

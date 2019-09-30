@@ -20,7 +20,7 @@ public class res_data {
     private String image;
     private String hall_capacity;
 
-    public void res_data() throws SQLException {connection = ConnectionUI.ConnDB(); get_data();}
+    public void res_data() throws SQLException {connection = ConnectionUI.getCon(); get_data();}
 
     private void get_data() throws SQLException {
         String sql = "SELECT * FROM restaurant where entity_id= ?";

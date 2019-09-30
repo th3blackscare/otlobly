@@ -19,16 +19,16 @@ public class tables {
 
 
     private static String SQL ;
-    public static Connection connection = ConnectionUI.ConnDB();
+    public static Connection connection = ConnectionUI.getCon();
     private static ObservableList<ObservableList> data;
     PreparedStatement preparedStatement;
-    public tables(){connection = ConnectionUI.ConnDB();}
+    public tables(){connection = ConnectionUI.getCon();}
 
 
 
 
     public static TableColumn fetColumnList(TableView<ObservableList> tblData, int ig,String str) {
-        connection = ConnectionUI.ConnDB();
+        //connection = ConnectionUI.ConnDB();
         if(ig == 1){
             SQL = "SELECT entity_id,order_status,order_date from order_master";
         }
@@ -36,7 +36,7 @@ public class tables {
             SQL = "SELECT item_name,qty_no,rate from order_item";
         }
         try {
-            ResultSet rs = connection.createStatement().executeQuery(SQL);
+            ResultSet rs = ConnectionUI.getCon().createStatement().executeQuery(SQL);
 
             //SQL FOR SELECTING ALL OF CUSTOMER
             for (int i = 0; i < rs.getMetaData().getColumnCount(); i++) {
@@ -70,7 +70,7 @@ public class tables {
         data = FXCollections.observableArrayList();
         ResultSet rs;
         try {
-            rs = connection.createStatement().executeQuery(SQL);
+            rs = ConnectionUI.getCon().createStatement().executeQuery(SQL);
 
             while (rs.next()) {
                 //Iterate Row
