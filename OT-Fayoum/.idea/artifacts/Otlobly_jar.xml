@@ -3,7 +3,11 @@
     <output-path>$PROJECT_DIR$/out/artifacts/Otlobly_jar</output-path>
     <root id="archive" name="Otlobly.jar">
       <element id="module-output" name="Otlobly" />
-      <element id="dir-copy" path="$PROJECT_DIR$/src/com/lib" />
+      <element id="directory" name="com">
+        <element id="directory" name="mysql">
+          <element id="dir-copy" path="$PROJECT_DIR$/src/com/mysql" />
+        </element>
+      </element>
     </root>
   </artifact>
 </component>
