@@ -19,7 +19,7 @@ public class ConnectionUI {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://41.41.94.230/otlobly?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "omar", "Reem*01019965508");
-            ConnectionUI.con = con;
+            this.con = con;
         } catch (SQLException | ClassNotFoundException e) {
             Alert a = new Alert(Alert.AlertType.NONE);
             a.setAlertType(Alert.AlertType.ERROR);
