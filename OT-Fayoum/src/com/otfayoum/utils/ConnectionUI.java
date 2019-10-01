@@ -4,6 +4,8 @@ import javafx.scene.control.Alert;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.SQLNonTransientConnectionException;
+
 public class ConnectionUI {
     static Connection con ;
     /* Main Constructor - Connection Initializer ( usable in Main class only)

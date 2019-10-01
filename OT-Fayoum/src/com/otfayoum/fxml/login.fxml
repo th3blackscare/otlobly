@@ -13,9 +13,9 @@
       <Pane prefHeight="649.0" prefWidth="768.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Pane layoutX="-105.0" layoutY="-164.0" prefHeight="303.0" prefWidth="467.0" rotate="41.6" style="-fx-background-color: #00BC61; -fx-background-radius: 70;" />
-            <TextField fx:id="txtUsername" layoutX="206.0" layoutY="176.0" prefHeight="34.0" prefWidth="275.0" promptText="username or email" />
+            <TextField fx:id="txtUsername" layoutX="206.0" layoutY="176.0" prefHeight="34.0" prefWidth="275.0" promptText="username or email" stylesheets="@../../../css/fullpackstylings.css" />
             <PasswordField fx:id="txtPassword" layoutX="206.0" layoutY="254.0" prefHeight="34.0" prefWidth="275.0" promptText="password" stylesheets="@/css/fullpackstylings.css" />
-            <Button fx:id="btnSignin" layoutX="222.0" layoutY="320.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="34.0" prefWidth="243.0" stylesheets="@/css/fullpackstylings.css" text="Sign in" />
+            <Button fx:id="btnSignin" layoutX="222.0" layoutY="320.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="34.0" prefWidth="243.0" stylesheets="@../../../css/fullpackstylings.css" text="Sign in" />
             <Label fx:id="lblErrors" alignment="CENTER" layoutX="204.0" layoutY="293.0" prefHeight="23.0" prefWidth="275.0" textFill="#ff6354">
                <font>
                   <Font name="Segoe UI" size="10.0" />

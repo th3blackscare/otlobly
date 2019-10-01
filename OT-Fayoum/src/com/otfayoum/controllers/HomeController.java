@@ -64,47 +64,31 @@ public class HomeController implements Initializable {
 
     public void handleButtonAction(MouseEvent event) throws IOException {
         if(event.getSource() == btnLogout){
-            try {
                 Node node = (Node) event.getSource();
                 Stage stage = (Stage) node.getScene().getWindow();
                 stage.close();
                 Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/otfayoum/fxml/login.fxml")));
                 stage.setScene(scene);
                 stage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
         else if(event.getSource() == btnExit){
-            try{
                 btnExit.setOnAction(e -> Platform.exit());
-            }catch (Exception e){
-                e.printStackTrace();
-            }
         }
         else if(event.getSource() == btnOrders ){
-            try {
                 Node node = (Node) event.getSource();
                 Stage stage = (Stage) node.getScene().getWindow();
                 //stage.close();
                 Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/otfayoum/fxml/Orders.fxml")));
                 stage.setScene(scene);
                 stage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
         else if(event.getSource() == btnName){
-            try {
                 Node node = (Node) event.getSource();
                 Stage stage = (Stage) node.getScene().getWindow();
                 stage.close();
                 Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/otfayoum/fxml/profile.fxml")));
                 stage.setScene(scene);
                 stage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 }

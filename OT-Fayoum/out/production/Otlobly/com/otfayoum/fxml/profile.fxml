@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -26,49 +27,50 @@
                   <Font name="Arial Bold" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="725.0" layoutY="223.0" text="الاسم" textFill="WHITE">
+            <Label layoutX="715.0" layoutY="223.0" text="الاسم" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txtName" editable="false" layoutX="510.0" layoutY="218.0" prefHeight="34.0" prefWidth="205.0" promptText="الاسم" />
+            <TextField fx:id="txtName" alignment="CENTER" editable="false" layoutX="500.0" layoutY="218.0" prefHeight="34.0" prefWidth="205.0" promptText="الاسم" />
             <ImageView fx:id="image" fitHeight="184.0" fitWidth="250.0" layoutX="562.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
-            <Label layoutX="724.0" layoutY="273.0" text="رقم الهاتف" textFill="WHITE">
+            <Label layoutX="714.0" layoutY="273.0" text="رقم الهاتف" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txtPhone" layoutX="510.0" layoutY="268.0" prefHeight="34.0" prefWidth="205.0" promptText="رقم الهاتف" />
-            <Label layoutX="724.0" layoutY="323.0" text="الايميل" textFill="WHITE">
+            <TextField fx:id="txtPhone" alignment="CENTER" layoutX="500.0" layoutY="268.0" prefHeight="34.0" prefWidth="205.0" promptText="رقم الهاتف" />
+            <Label layoutX="714.0" layoutY="323.0" text="الايميل" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txtEmail" layoutX="510.0" layoutY="318.0" prefHeight="34.0" prefWidth="205.0" promptText="الايميل" />
-            <Label layoutX="724.0" layoutY="373.0" text="عدد الاشخاص" textFill="WHITE">
+            <TextField fx:id="txtEmail" alignment="CENTER" layoutX="500.0" layoutY="318.0" prefHeight="34.0" prefWidth="205.0" promptText="الايميل" />
+            <Label layoutX="714.0" layoutY="373.0" text="عدد الاشخاص" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txtCapacity" layoutX="510.0" layoutY="368.0" prefHeight="34.0" prefWidth="205.0" promptText="عدد الاشخاص" />
-            <Label layoutX="724.0" layoutY="423.0" text="الطاولات" textFill="WHITE">
+            <TextField fx:id="txtCapacity" alignment="CENTER" layoutX="500.0" layoutY="368.0" prefHeight="34.0" prefWidth="205.0" promptText="عدد الاشخاص" />
+            <Label layoutX="714.0" layoutY="423.0" text="الطاولات" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txtTables" layoutX="510.0" layoutY="418.0" prefHeight="34.0" prefWidth="205.0" promptText="الطاولات" />
-            <Label layoutX="423.0" layoutY="223.0" text="الصالات" textFill="WHITE">
+            <TextField fx:id="txtTables" alignment="CENTER" layoutX="500.0" layoutY="418.0" prefHeight="34.0" prefWidth="205.0" promptText="الطاولات" />
+            <Label layoutX="429.0" layoutY="223.0" text="الصالات" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txtHalls" layoutX="189.0" layoutY="218.0" prefHeight="34.0" prefWidth="205.0" promptText="الصالات" />
-            <Label layoutX="403.0" layoutY="273.0" text="استيعاب الصالة" textFill="WHITE">
+            <TextField fx:id="txtHalls" alignment="CENTER" layoutX="159.0" layoutY="218.0" prefHeight="34.0" prefWidth="205.0" promptText="الصالات" />
+            <Label layoutX="373.0" layoutY="273.0" text="استيعاب الصالة" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txtHallCap" layoutX="189.0" layoutY="268.0" prefHeight="34.0" prefWidth="205.0" promptText="الطاولات" />
+            <TextField fx:id="txtHallCap" alignment="CENTER" layoutX="159.0" layoutY="268.0" prefHeight="34.0" prefWidth="205.0" promptText="الطاولات" />
+            <PasswordField layoutX="159.0" layoutY="370.0" prefHeight="34.0" prefWidth="205.0" />
          </children>
       </Pane>
       <AnchorPane layoutX="825.0" layoutY="-1.0" prefHeight="649.0" prefWidth="262.0" style="-fx-background-color: #393351;">
